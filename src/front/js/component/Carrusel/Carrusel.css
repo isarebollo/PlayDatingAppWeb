@@ -1,0 +1,13 @@
+.carousel-caption {
+  font-size: 15px;
+}
+
+.imagenCarrusel {
+  margin-bottom: 100px;
+}
+
+#buttonCarrusel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

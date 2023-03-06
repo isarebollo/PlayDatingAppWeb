@@ -1,54 +1,42 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			message: null,
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+			actividades: [],
+			eventos: [],
+			favoritos: []
+
 		},
+		
 		actions: {
-			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
+			agregarActividades: (listaDeActividades) => {
+				setStore({ actividades: listaDeActividades });
 			},
 
-			getMessage: async () => {
-				try{
-					// fetching data from the backend
-					const resp = await fetch(process.env.BACKEND_URL + "/api/hello")
-					const data = await resp.json()
-					setStore({ message: data.message })
-					// don't forget to return something, that is how the async resolves
-					return data;
-				}catch(error){
-					console.log("Error loading message from backend", error)
-				}
+			agregarEventos: (listaDeEventos) => {
+				setStore({ eventos: listaDeEventos });
 			},
-			changeColor: (index, color) => {
-				//get the store
+
+			agregarFavorito: (favorito) => {
+				const store = getStore()
+				const listaDeFavoritos = store.favoritos.concat(favorito)
+				setStore({ favoritos: listaDeFavoritos })
+			},
+
+			guardarFavoritos: (listaDeFavoritos) => {
+				setStore({ favoritos: listaDeFavoritos });
+			},
+
+			eliminarFavorito: (usuarioFavoritoId) => {
 				const store = getStore();
+				const listaDeFavoritos = store.favoritos;
+				const listaFiltradaDeFavoritos = listaDeFavoritos.filter((favorito) => {
+					return favorito.usuario_favorito_id !== usuarioFavoritoId;
+				})
+				setStore({ favoritos: listaFiltradaDeFavoritos})
 
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
-
-				//reset the global store
-				setStore({ demo: demo });
 			}
 		}
-	};
-};
+	}
+}
 
-export default getState;
+	export default getState;

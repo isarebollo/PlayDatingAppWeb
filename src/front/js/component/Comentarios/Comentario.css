@@ -1,0 +1,85 @@
+.containerComentario{
+    width: 60em;
+  }
+  /* boton papelera de los comentarios */
+  
+  .buttonRedTrash {
+      padding: 0.4em 0.5em ;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: #af2c2c;
+      transition: all 1000ms;
+      font-size: 15px;
+      position: relative;
+      overflow: hidden;
+      outline: 2px solid #af2c2c;
+    }
+    
+    .buttonRedTrash:hover {
+      color: #ffffff;
+      transform: scale(1.1);
+      outline: 2px solid #ca7070;
+      box-shadow: 4px 5px 17px -4px #912626;
+    }
+    
+    .buttonRedTrash::before {
+      content: "";
+      position: absolute;
+      left: -50px;
+      top: 0;
+      width: 0;
+      height: 100%;
+      background-color: #af2c2c;
+      transform: skewX(45deg);
+      z-index: -1;
+      transition: width 1000ms;
+    }
+    
+    .buttonRedTrash:hover::before {
+      width: 250%;
+    }
+  
+  
+  /* boton favorito de los comentarios */
+  
+  .buttonYellowStar {
+    padding: 0.4em 0.5em ;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #af932c;
+    transition: all 1000ms;
+    font-size: 15px;
+    position: relative;
+    overflow: hidden;
+    outline: 2px solid #af932c;
+  }
+  
+  .buttonYellowStar:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+    outline: 2px solid #cac470;
+    box-shadow: 4px 5px 17px -4px #8f9126;
+  }
+  
+  .buttonYellowStar::before {
+    content: "";
+    position: absolute;
+    left: -50px;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: #af932c;
+    transform: skewX(45deg);
+    z-index: -1;
+    transition: width 1000ms;
+  }
+  
+  .buttonYellowStar:hover::before {
+    width: 250%;
+  }

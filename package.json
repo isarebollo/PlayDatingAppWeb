@@ -73,9 +73,14 @@
 		]
 	},
 	"dependencies": {
+		"bootstrap": "^5.2.3",
+		"moment": "^2.29.4",
 		"prop-types": "^15.6.1",
 		"react": "^16.8.4",
+		"react-bootstrap": "^2.7.2",
+		"react-datetime-picker": "^4.2.0",
 		"react-dom": "^16.8.4",
+		"react-icons": "^4.8.0",
 		"react-polyfills": "0.0.1",
 		"react-router-dom": "^6.3.0"
 	}

@@ -1,0 +1,20 @@
+.navbar {
+  background-color: #26272b;
+}
+
+.navbar-nav a:active,
+.navbar-nav a:focus,
+.navbar-nav a:hover {
+  color: #33b5cc;
+  text-decoration: none;
+}
+
+.nav-link {
+  color: #bbb;
+  text-decoration: none;
+}
+
+#logo {
+  margin-left: 2rem;
+  width: 6rem;
+}
