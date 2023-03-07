@@ -5,6 +5,7 @@ import { HOSTNAME } from "./../../component/config";
 
 import "./../../../styles/index.css";
 import { ListMisEventos } from "../../component/List/ListMisEventos.jsx";
+import { AiOutlineAlert } from "react-icons/ai";
 
 export const MisEventos = () => {
   const [eventos, setEventos] = useState([]);
@@ -75,27 +76,39 @@ export const MisEventos = () => {
   return (
     <>
       <div className="container">
-        <h2 className="text-center ">MIS EVENTOS</h2>
-        {sortedArray(eventos).map((evento, index) => {
-          return (
-            <div key={index}>
-              <ListMisEventos
-                evento_id={evento.id}
-                creador={evento.creador.id}
-                participantes={evento.participantes}
-                name={evento.actividad.nombre}
-                src={evento.actividad.imagen}
-                text={evento.actividad.descripcion}
-                tipo={evento.actividad.tipo_de_actividad}
-                cupos_disponibles={evento.cupos_disponibles}
-                max_participantes={evento.maximo_participantes}
-                estado={definirEstado(evento)}
-                fecha_y_hora={evento.fecha_y_hora}
-                route={"/detalleEvento/" + evento.id}
-              />
-            </div>
-          );
-        })}
+        <div className="text-center p-3 ">
+          <h3 className="text-center ">Mis Eventos</h3>
+        </div>
+        {eventos.length === 0 && (
+          <div className="m-5 NoHayEventos">
+            <h2 className="iconAlerta">
+              <AiOutlineAlert />
+            </h2>
+            <h4>No tienes Eventos</h4>
+          </div>
+        )}
+        <div>
+          {sortedArray(eventos).map((evento, index) => {
+            return (
+              <div key={index}>
+                <ListMisEventos
+                  evento_id={evento.id}
+                  creador={evento.creador.id}
+                  participantes={evento.participantes}
+                  name={evento.actividad.nombre}
+                  src={evento.actividad.imagen}
+                  text={evento.actividad.descripcion}
+                  tipo={evento.actividad.tipo_de_actividad}
+                  cupos_disponibles={evento.cupos_disponibles}
+                  max_participantes={evento.maximo_participantes}
+                  estado={definirEstado(evento)}
+                  fecha_y_hora={evento.fecha_y_hora}
+                  route={"/detalleEvento/" + evento.id}
+                />
+              </div>
+            );
+          })}
+        </div>
       </div>
     </>
   );

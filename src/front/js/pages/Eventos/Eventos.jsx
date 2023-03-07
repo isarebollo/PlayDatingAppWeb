@@ -4,7 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { HOSTNAME } from "./../../component/config"
 import { CardEvento } from "../../component/CardEvento/CardEvento.jsx";
 import "./../../../styles/index.css"
-
+import "./../Eventos/Eventos.css"
+import { AiOutlineAlert } from 'react-icons/ai';
 export const Eventos = () => {
    
     const [eventos, setEventos] = useState([]);
@@ -58,13 +59,14 @@ export const Eventos = () => {
     return (
         <>
 
-            <div className="container">
-                <div className="text-center p-3  ">
+            <div className="container mb-5">
+                <div className="text-center p-3 ">
                     <h3>Participa En Los Eventos Creados En Tu Zona</h3>
                 </div>
                 {eventos.length === 0 && (
-                    <div className="mt-1">
-                        <h5>Aún no hay eventos en esta provincia</h5>
+                    <div className="m-5 NoHayEventos" >
+                        <h2 className="iconAlerta"><AiOutlineAlert /></h2>
+                        <h4>Aún no hay eventos en esta provincia</h4>
                     </div>
                 )}
 

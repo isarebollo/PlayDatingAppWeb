@@ -89,9 +89,8 @@ export const Login = () => {
               value={password}
               type="password"
               required="required"
-            >
-              {" "}
-            </input>
+            />
+             
             <span>Password</span>
           </div>
 

@@ -7,10 +7,9 @@ export const NavbarSinLogin = () => {
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-dark">
-        <img id="logo" src={PlayDating} alt="PlayDating" />
         <div className="container-fluid">
           <a className="navbar-brand " href="/">
-            PlayDating
+            <img id="logo" src={PlayDating} alt="PlayDating" />
           </a>
           <button
             className="navbar-toggler"

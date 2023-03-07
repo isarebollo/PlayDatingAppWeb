@@ -75,7 +75,7 @@ export const CardEvento = (props) => {
                 <div className="card-footer bg-body">
                   <Link to={props.route}>
                     <button
-                      href="#"
+                      
                       className="button"
                       
                     >
@@ -238,7 +238,7 @@ export const CardEvento = (props) => {
 };
 CardEvento.propTypes = {
   evento_id: propTypes.number,
-  creador: propTypes.number,
+  creador: propTypes.string,
   name: propTypes.string,
   src: propTypes.string,
   text: propTypes.string,

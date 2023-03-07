@@ -1,6 +1,7 @@
 import React from "react";
 import "./../../../styles/index.css";
 
+
 import moment from "moment";
 
 import { UnirseRetirarseEvento } from "../Otros/UnirseRetirarseEvento.jsx";
@@ -18,8 +19,8 @@ export const DetallesEventoCreado = (props) => {
   let date = moment(props.fecha_y_hora).format("DD/MM/YYYY - HH:mm");
 
   return (
-    <>
-      <div className="card border rounded ">
+    <> 
+      <div className="card border rounded sizedetalle ">
         <div className="card-title">
           <h5 className="text-center">{date}</h5>
           <hr></hr>

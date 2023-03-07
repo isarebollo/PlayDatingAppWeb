@@ -8,9 +8,9 @@ import { BsGithub, BsLinkedin } from "react-icons/bs";
 export const Footer = () => {
   return (
     <>
-      <footer className="site-footer">
+      <footer className="site-footer " >
         <div className="container">
-          <div className="row info-Foote">
+          <div className="row">
             <div className="about col-sm-12 col-md-6">
               <h6>About</h6>
               <p className="text-justify">

@@ -1,0 +1,9 @@
+.NoHayEventos {
+  margin: 200px;
+  padding: 1%;
+  text-align: center;
+}
+.iconAlerta {
+  font-size: 8rem;
+  color: red;
+}

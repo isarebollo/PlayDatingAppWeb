@@ -202,6 +202,7 @@ export const Registro = () => {
         <Modal.Body>{textoAlerta}</Modal.Body>
         <Modal.Footer>
           <Button
+            className="button"
             variant="button"
             onClick={() => {
               if (modalManager) {
