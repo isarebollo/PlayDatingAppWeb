@@ -1,4 +1,4 @@
-export const HOSTNAME =process.env.BACKEND_URL
+export const HOSTNAME ="https://playdating.herokuapp.com"
 
 export const config = {
 
